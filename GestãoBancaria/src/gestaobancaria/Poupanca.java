@@ -9,6 +9,9 @@ package gestaobancaria;
  *
  * @author 71600426
  */
-public class Poupanca {
+public class Poupanca extends Conta{
     
+    public void Redimento(double valor) {
+        super.setSaldo((super.getSaldo() * valor) / 100);
+    }
 }

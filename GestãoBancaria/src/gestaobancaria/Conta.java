@@ -4,17 +4,19 @@ package gestaobancaria;
 import com.sun.xml.internal.fastinfoset.stax.events.Util;
 
 public class Conta {
-
-    protected double saldo;
+    
+    private double saldo;
     private String extrato;
     
     public void deposita(double valor) {
         this.saldo += valor;
+        setSaldo(valor);
         salvaExtrato(valor);
     }
 
     public void saca(double valor) {
         this.saldo -= valor;
+        setSaldo(-valor);
         salvaExtrato(-valor);
     }
 
@@ -22,8 +24,8 @@ public class Conta {
         return this.saldo;
     }
 
-    public void atualiza(double taxa) {
-        this.saldo += this.saldo * taxa;
+    public void setSaldo(double saldo) {
+        this.saldo += saldo;
     }
     
     public void salvaExtrato(double valor){

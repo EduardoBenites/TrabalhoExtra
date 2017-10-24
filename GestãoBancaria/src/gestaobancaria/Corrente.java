@@ -9,6 +9,9 @@ package gestaobancaria;
  *
  * @author 71600426
  */
-public class Corrente {
+public class Corrente extends Conta{
     
+    public void atualiza(double taxa) {
+        super.setSaldo((super.getSaldo() * taxa) / 100);
+    }
 }
