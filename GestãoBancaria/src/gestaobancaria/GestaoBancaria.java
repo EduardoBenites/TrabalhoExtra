@@ -16,7 +16,8 @@ public class GestaoBancaria {
         Scanner sc = new Scanner(System.in);
         
         
-        Conta c = new Conta();
+        Poupanca p = new Poupanca();
+        Corrente c = new Corrente();
         /* 
         c.deposita(10);
         c.deposita(5);
@@ -40,6 +41,7 @@ public class GestaoBancaria {
                 System.out.println("2- Sacar");
                 System.out.println("3- Tirar Extrato");
                 System.out.println("4- Consultar saldo");
+                System.out.println("5- Sair");
 
                 int option = sc.nextInt();
 
@@ -47,26 +49,25 @@ public class GestaoBancaria {
                     case 1: {
                         System.out.println("Digite o valor a ser depositado: ");
                         double dep = sc.nextDouble();
-                        c.deposita(dep);
+                        p.deposita(dep);
                         break;
                     }
                     case 2: {
                         System.out.println("Digite o valor a ser sacado: ");
                         double sac = sc.nextDouble();
-                        c.saca(sac);
+                        p.saca(sac);
                         break;
                     }
                     case 3: {
-                        System.out.println(c.getExtrato());
+                        System.out.println(p.getExtrato());
                         break;
                     }
                     case 4: {
-                        System.out.println("Saldo: R$ " + c.getSaldo());
+                        System.out.println("Saldo: R$ " + p.getSaldo());
                         break;
                     }
 
                 }
-
                 break;
             }
             case 2: {

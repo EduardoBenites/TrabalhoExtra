@@ -1,7 +1,6 @@
 
 package gestaobancaria;
 
-import com.sun.xml.internal.fastinfoset.stax.events.Util;
 
 public class Conta {
     
@@ -29,7 +28,7 @@ public class Conta {
     }
     
     public void salvaExtrato(double valor){
-        if(Util.isEmptyString(this.extrato))
+        if(this.extrato == null)
             this.extrato = "Extrato bancário:\n• R$ " + valor;
         this.extrato = this.extrato + "\n• R$ " + valor;
     }
