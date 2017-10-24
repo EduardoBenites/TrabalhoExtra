@@ -15,9 +15,9 @@ public class GestaoBancaria {
 
         Scanner sc = new Scanner(System.in);
         
-        /* 
-        Conta c = new Conta();
         
+        Conta c = new Conta();
+        /* 
         c.deposita(10);
         c.deposita(5);
         c.deposita(2);
@@ -45,19 +45,23 @@ public class GestaoBancaria {
 
                 switch (option) {
                     case 1: {
-                        //chamar metodo de deposito
+                        System.out.println("Digite o valor a ser depositado: ");
+                        double dep = sc.nextDouble();
+                        c.deposita(dep);
                         break;
                     }
                     case 2: {
-                        //chamar metodo de saque
+                        System.out.println("Digite o valor a ser sacado: ");
+                        double sac = sc.nextDouble();
+                        c.saca(sac);
                         break;
                     }
                     case 3: {
-                        //chamar metodo de extrato
+                        System.out.println(c.getExtrato());
                         break;
                     }
                     case 4: {
-                        //chamar metodo de saldo
+                        System.out.println("Saldo: R$ " + c.getSaldo());
                         break;
                     }
 
@@ -76,19 +80,23 @@ public class GestaoBancaria {
 
                 switch (option) {
                     case 1: {
-                        //chamar metodo de deposito
+                        System.out.println("Digite o valor a ser depositado: ");
+                        double dep = sc.nextDouble();
+                        c.deposita(dep);
                         break;
                     }
                     case 2: {
-                        //chamar metodo de saque
+                        System.out.println("Digite o valor a ser sacado: ");
+                        double sac = sc.nextDouble();
+                        c.saca(sac);
                         break;
                     }
                     case 3: {
-                        //chamar metodo de extrato
+                        System.out.println(c.getExtrato());
                         break;
                     }
                     case 4: {
-                        //chamar metodo de saldo
+                        System.out.println("Saldo: R$ " + c.getSaldo());
                         break;
                     }
                 }
