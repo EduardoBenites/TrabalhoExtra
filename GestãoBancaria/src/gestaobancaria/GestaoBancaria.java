@@ -61,6 +61,7 @@ public class GestaoBancaria {
                         }
                         case 3: {
                             System.out.println(p.getExtrato());
+                            System.out.println("Saldo: R$ " + p.getSaldo());
                             break;
                         }
                         case 4: {
@@ -105,6 +106,7 @@ public class GestaoBancaria {
                         case 3: {
                             System.out.println("");
                             System.out.println(c.getExtrato());
+                            System.out.println("Saldo: R$ " + p.getSaldo());
                             break;
                         }
                         case 4: {
