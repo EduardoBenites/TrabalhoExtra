@@ -8,13 +8,12 @@ public class Conta {
     private String extrato;
     
     public void deposita(double valor) {
-        this.saldo += valor;
+        
         setSaldo(valor);
         salvaExtrato(valor);
     }
 
     public void saca(double valor) {
-        this.saldo -= valor;
         setSaldo(-valor);
         salvaExtrato(-valor);
     }
@@ -24,7 +23,7 @@ public class Conta {
     }
 
     public void setSaldo(double saldo) {
-        this.saldo += saldo;
+        this.saldo = this.saldo + (saldo);
     }
     
     public void salvaExtrato(double valor){
