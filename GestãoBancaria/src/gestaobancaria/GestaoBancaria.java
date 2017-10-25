@@ -30,99 +30,111 @@ public class GestaoBancaria {
         System.out.println("Escolha sua conta: ");
         System.out.println("1- Conta Poupança");
         System.out.println("2- Conta Corrente ");
+        System.out.println("0- Sair ");
 
         int opcao = sc.nextInt();
         int option;
+        
+        do {
+            switch (opcao) {
+                case 1: {
+                    do {
+                        System.out.println("Bem vindo a sua poupança! O que deseja fazer?");
+                        System.out.println("1- Depositar");
+                        System.out.println("2- Sacar");
+                        System.out.println("3- Tirar Extrato");
+                        System.out.println("4- Consultar saldo");
+                        System.out.println("0- Voltar");
 
-        switch (opcao) {
-            case 1: {
-                do {
-                    System.out.println("Bem vindo a sua poupança! O que deseja fazer?");
-                    System.out.println("1- Depositar");
-                    System.out.println("2- Sacar");
-                    System.out.println("3- Tirar Extrato");
-                    System.out.println("4- Consultar saldo");
-                    System.out.println("5- Sair");
+                        option = sc.nextInt();
 
-                    option = sc.nextInt();
+                        switch (option) {
+                            case 1: {
+                                System.out.println("Digite o valor a ser depositado: ");
+                                double dep = sc.nextDouble();
+                                p.deposita(dep);
+                                break;
+                            }
+                            case 2: {
+                                System.out.println("Digite o valor a ser sacado: ");
+                                double sac = sc.nextDouble();
+                                p.saca(sac);
+                                break;
+                            }
+                            case 3: {
+                                System.out.println(p.getExtrato());
+                                System.out.println("Saldo: R$ " + p.getSaldo());
+                                break;
+                            }
+                            case 4: {
+                                System.out.println("Saldo: R$ " + p.getSaldo());
+                                break;
+                            }
+                            default:
+                                if(option != 0)
+                                    System.out.println("Opção incorreta, tente novamente.");
+                        }
+                    } while (option != 0);
+                    break;
+                }
 
-                    switch (option) {
-                        case 1: {
-                            System.out.println("Digite o valor a ser depositado: ");
-                            double dep = sc.nextDouble();
-                            p.deposita(dep);
-                            break;
+                case 2: {
+                    do {
+                        System.out.println("Bem vindo a sua conta corrente! O que deseja fazer?");
+                        System.out.println("1- Depositar");
+                        System.out.println("2- Sacar");
+                        System.out.println("3- Tirar Extrato");
+                        System.out.println("4- Consultar saldo");
+                        System.out.println("0- Voltar");
+
+                        option = sc.nextInt();
+
+                        switch (option) {
+                            case 1: {
+                                System.out.println("");
+                                System.out.println("Digite o valor a ser depositado: ");
+                                double dep = sc.nextDouble();
+                                c.deposita(dep);
+                                break;
+                            }
+                            case 2: {
+                                System.out.println("");
+                                System.out.println("Digite o valor a ser sacado: ");
+                                double sac = sc.nextDouble();
+                                c.saca(sac);
+                                break;
+                            }
+                            case 3: {
+                                System.out.println("");
+                                System.out.println(c.getExtrato());
+                                System.out.println("Saldo: R$ " + p.getSaldo());
+                                break;
+                            }
+                            case 4: {
+                                System.out.println("");
+                                System.out.println("Saldo: R$ " + c.getSaldo());
+                                break;
+                            }
+                            default:
+                                if(option != 0)
+                                    System.out.println("Opção incorreta, tente novamente.");
                         }
-                        case 2: {
-                            System.out.println("Digite o valor a ser sacado: ");
-                            double sac = sc.nextDouble();
-                            p.saca(sac);
-                            break;
-                        }
-                        case 3: {
-                            System.out.println(p.getExtrato());
-                            System.out.println("Saldo: R$ " + p.getSaldo());
-                            break;
-                        }
-                        case 4: {
-                            System.out.println("Saldo: R$ " + p.getSaldo());
-                            break;
-                        }
-                        default:
-                            if(option != 5)
-                                System.out.println("Opção incorreta, tente novamente.");
-                    }
-                } while (option != 5);
-                System.out.println("Fim");
-                break;
+                    } while (option != 0);
+                }
+            }    
+                
+            if(opcao != 0){
+                System.out.println("Opção incorreta, tente novamente.");
+                System.out.println("Escolha sua conta: ");
+                System.out.println("1- Conta Poupança");
+                System.out.println("2- Conta Corrente ");
+                System.out.println("0- Sair ");
+
+                opcao = sc.nextInt();
             }
-
-            case 2: {
-                do {
-                    System.out.println("Bem vindo a sua conta corrente! O que deseja fazer?");
-                    System.out.println("1- Depositar");
-                    System.out.println("2- Sacar");
-                    System.out.println("3- Tirar Extrato");
-                    System.out.println("4- Consultar saldo");
-                    System.out.println("5- Sair");
-                    
-                    option = sc.nextInt();
-
-                    switch (option) {
-                        case 1: {
-                            System.out.println("");
-                            System.out.println("Digite o valor a ser depositado: ");
-                            double dep = sc.nextDouble();
-                            c.deposita(dep);
-                            break;
-                        }
-                        case 2: {
-                            System.out.println("");
-                            System.out.println("Digite o valor a ser sacado: ");
-                            double sac = sc.nextDouble();
-                            c.saca(sac);
-                            break;
-                        }
-                        case 3: {
-                            System.out.println("");
-                            System.out.println(c.getExtrato());
-                            System.out.println("Saldo: R$ " + p.getSaldo());
-                            break;
-                        }
-                        case 4: {
-                            System.out.println("");
-                            System.out.println("Saldo: R$ " + c.getSaldo());
-                            break;
-                        }
-                        default:
-                            if(option != 5)
-                                System.out.println("Opção incorreta, tente novamente.");
-                    }
-                } while (option != 5);
-                System.out.println("Fim");
-
-            }
-        }
+            
+        } while (opcao != 0);
+        System.out.println("Fim");
     }
 
 }
