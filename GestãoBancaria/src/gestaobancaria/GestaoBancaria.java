@@ -44,6 +44,7 @@ public class GestaoBancaria {
                         System.out.println("2- Sacar");
                         System.out.println("3- Tirar Extrato");
                         System.out.println("4- Consultar saldo");
+                        System.out.println("5- Transferir para conta corrente");
                         System.out.println("0- Voltar");
 
                         option = sc.nextInt();
@@ -70,6 +71,13 @@ public class GestaoBancaria {
                                 System.out.println("Saldo: R$ " + p.getSaldo());
                                 break;
                             }
+                            case 5: {
+					
+				System.out.println("Digite o valor a ser transferido");
+				double transf = sc.nextDouble();
+				p.transferir(c, transf);			
+				
+				}
                             default:
                                 if(option != 0)
                                     System.out.println("Opção incorreta, tente novamente.");
@@ -85,6 +93,7 @@ public class GestaoBancaria {
                         System.out.println("2- Sacar");
                         System.out.println("3- Tirar Extrato");
                         System.out.println("4- Consultar saldo");
+                        System.out.println("5- Transferir para Poupança");
                         System.out.println("0- Voltar");
 
                         option = sc.nextInt();
@@ -107,7 +116,7 @@ public class GestaoBancaria {
                             case 3: {
                                 System.out.println("");
                                 System.out.println(c.getExtrato());
-                                System.out.println("Saldo: R$ " + p.getSaldo());
+                                System.out.println("Saldo: R$ " + c.getSaldo());
                                 break;
                             }
                             case 4: {
@@ -115,6 +124,13 @@ public class GestaoBancaria {
                                 System.out.println("Saldo: R$ " + c.getSaldo());
                                 break;
                             }
+                            case 5: {
+					
+				System.out.println("Digite o valor a ser transferido");
+				double transf = sc.nextDouble();
+				c.transferir(p, transf);			
+				
+				}
                             default:
                                 if(option != 0)
                                     System.out.println("Opção incorreta, tente novamente.");

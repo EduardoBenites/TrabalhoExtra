@@ -36,6 +36,13 @@ public class Conta {
         return extrato;
     }
 
+     public void transferir(Conta destino, double valor) {
+		saca(valor);
+		destino.deposita(valor);
+		
+		salvaExtrato(-valor);
+
+	}
     
 
     
